@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"Actors",
+  "name":"Actors",
+  "parent":{
+    "name":"Actors",
+    "path":"folders/Objects/Entities/Actors.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
