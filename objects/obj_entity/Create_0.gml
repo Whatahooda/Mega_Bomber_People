@@ -9,8 +9,8 @@
 ///	@desc	Default function that moves the entity
 function MoveEntity(_direction)
 {
-	var _x_speed = entity_speed * _direction.x;
-	var _y_speed = entity_speed * _direction.y;
+	var _x_speed = entity_speed * _direction.x * GetDeltaTimeSeconds();
+	var _y_speed = entity_speed * _direction.y * GetDeltaTimeSeconds();
 	move_and_collide(_x_speed, _y_speed, colliders);
 }
 

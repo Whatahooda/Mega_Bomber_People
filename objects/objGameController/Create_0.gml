@@ -1,0 +1,1 @@
+global.TILE_SIZE = 16;

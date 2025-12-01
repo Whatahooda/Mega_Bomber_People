@@ -95,3 +95,15 @@ function RadiansFromVector2D(_vector)
 {
 	return arctan2(_vector.vy, _vector.vx);
 }
+
+///	@function	BinaryInputToVector(_in_up, _in_down, _in_left, _in_right)
+///	@param	{Real}	_in_up
+///	@param	{Real}	_in_down
+///	@param	{Real}	_in_left
+///	@param	{Real}	_in_right
+///	@return	{Vector2D}
+///	@desc	Takes in input variables and turns them into a normalized vector struct
+function BinaryInputToVector(_in_up, _in_down, _in_left, _in_right)
+{
+	return new Vector2D(_in_right - _in_left, _in_down - _in_up).normalize();
+}
