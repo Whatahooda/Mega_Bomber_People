@@ -16,9 +16,9 @@ GetMoveDirection = function(){return new Vector2D(0, 0);}
 ///	@desc	Default function that moves the entity
 function MoveEntity(_direction)
 {
-	var _x_speed = entity_speed * _direction.x * GetDeltaTimeSeconds();
-	var _y_speed = entity_speed * _direction.y * GetDeltaTimeSeconds();
-	move_and_collide(_x_speed, _y_speed, colliders);
+	var _x_speed = entity_speed * _direction.vx * GetDeltaTimeSeconds();
+	var _y_speed = entity_speed * _direction.vy * GetDeltaTimeSeconds();
+	var _collisions = move_and_collide(_x_speed, _y_speed, colliders);
 }
 
 ///	@function	UpdateEntityMove(_direction)
@@ -35,7 +35,10 @@ UpdateEntityMove = MoveEntity;
 function EntityDefaultState()
 {
 	var _move_direction = GetMoveDirection();
-	MoveEntity(_move_direction);
+	if (_move_direction.magnitude != 0)
+	{
+		MoveEntity(_move_direction);
+	}
 }
 
 

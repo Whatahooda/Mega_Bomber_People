@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_KenneyDungeon",
-    "path":"sprites/spr_KenneyDungeon/spr_KenneyDungeon.yy",
+    "name":"spr_KDCPlayer1",
+    "path":"sprites/spr_KDCPlayer1/spr_KDCPlayer1.yy",
   },
   "spriteMaskId":null,
   "visible":true,
