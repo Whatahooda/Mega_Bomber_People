@@ -31,4 +31,4 @@ function SnapToGrid(_position, _grid_size = global.TILE_SIZE)
 function GetGridPosition(_position, _grid_size = global.TILE_SIZE)
 {
 	return (_position + _grid_size / 2) div _grid_size;
-}
+}

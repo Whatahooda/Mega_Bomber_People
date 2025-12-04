@@ -28,7 +28,7 @@ function ActorState()
 		var _ts = time_source_create(time_source_game, .5, time_source_units_seconds, function(){can_bomb = true;});
 		time_source_start(_ts);
 		
-		SpawnItem(x, y, true, ITEM.BOMB, my_id, []);
+		SpawnItem(x, y, SNAP_TO.CENTER, ITEM.BOMB, my_id, []);
 	}
 }
 

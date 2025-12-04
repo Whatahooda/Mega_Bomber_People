@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_breakable",
+  "%Name":"obj_damage_box",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_breakable",
+  "name":"obj_damage_box",
   "overriddenProperties":[],
   "parent":{
-    "name":"Destructibles",
-    "path":"folders/Objects/Entities/Destructibles.yy",
+    "name":"Dangers",
+    "path":"folders/Objects/Entities/Dangers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -25,14 +25,13 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"life_time","filters":[],"listItems":[],"multiselect":false,"name":"life_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_breakable",
-    "path":"sprites/spr_breakable/spr_breakable.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

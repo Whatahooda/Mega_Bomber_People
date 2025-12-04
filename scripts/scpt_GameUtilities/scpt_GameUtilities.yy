@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scpt_TileSetUtilities",
+  "%Name":"scpt_GameUtilities",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scpt_TileSetUtilities",
+  "name":"scpt_GameUtilities",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

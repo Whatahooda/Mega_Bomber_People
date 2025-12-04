@@ -28,7 +28,10 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"entity_speed","filters":[],"listItems":[],"multiselect":false,"name":"entity_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"64","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"colliders","filters":[],"listItems":[],"multiselect":false,"name":"colliders","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"objSolid","path":"objects/objSolid/objSolid.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"objSolid","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"colliders","filters":[],"listItems":[
+        "obj_solid",
+        "obj_breakable",
+      ],"multiselect":true,"name":"colliders","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_solid, obj_breakable","varType":6,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
