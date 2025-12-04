@@ -1,0 +1,1 @@
+owner.ActorHurt(other.danger_type);

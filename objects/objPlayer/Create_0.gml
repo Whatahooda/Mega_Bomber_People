@@ -11,7 +11,7 @@ function PlayerDeath()
 {
 	obj_game_controller.PlayerDied(my_id);
 	
-	instance_create_layer(SnapToGrid(x, SNAP_TO.CENTER), SnapToGrid(y, SNAP_TO.CENTER), "Actors", obj_breakable_destruction, {sprite_index: spr_player_death, life_time: -0.05});
+	instance_create_layer(x, y, "Actors", obj_breakable_destruction, {sprite_index: spr_player_death, life_time: -0.05});
 	instance_destroy(self);
 }
 
@@ -31,10 +31,7 @@ function ActorState()
 	var _move_direction = GetMoveDirection();
 	if (_move_direction.magnitude != 0)
 	{
-		MoveEntity(_move_direction);
-		// Snap to integer value position
-		x = round(x);
-		y = round(y);
+		MoveActor(_move_direction);
 	}
 	
 	if (can_bomb && InputCheck(INPUT_VERB.ACCEPT) && place_empty(SnapToGrid(x), SnapToGrid(y), obj_bomb))
