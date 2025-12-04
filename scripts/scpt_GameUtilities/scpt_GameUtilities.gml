@@ -26,10 +26,10 @@ function DrawSpriteFromTileSet(_tile_set_sprite, _tile_size, _row, _col, _pos_x,
 
 ///	@function	SnapToGrid(_position, _snap_to, [_grid_size])
 ///	@param	{Real}	_position
-///	@param	{Real}	_snap_to	Enum.SNAP_TO, Snaps the position to the specified verb
+///	@param	{Real}	[_snap_to]	Enum.SNAP_TO, Snaps the position to the specified verb
 ///	@param	{Real}	[_grid_size]
 ///	@desc	Takes the position, and returns the closest positions aligned with the grid size
-function SnapToGrid(_position, _snap_to, _grid_size = global.TILE_SIZE)
+function SnapToGrid(_position, _snap_to = SNAP_TO.TOP_LEFT, _grid_size = global.TILE_SIZE)
 {
 	var _grid_position = GetGridPosition(_position, _grid_size) * _grid_size;
 	switch (_snap_to) {
@@ -47,6 +47,7 @@ function SnapToGrid(_position, _snap_to, _grid_size = global.TILE_SIZE)
 	}
 }
 
+
 ///	@function	GetGridPosition(_position)
 ///	@param	{Real}	_position
 ///	@param	{Real}	[_grid_size]
@@ -54,3 +55,4 @@ function GetGridPosition(_position, _grid_size = global.TILE_SIZE)
 {
 	return (_position + _grid_size / 2) div _grid_size;
 }
+

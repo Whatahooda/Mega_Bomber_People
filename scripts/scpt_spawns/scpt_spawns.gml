@@ -3,6 +3,18 @@ enum ITEM
 	BOMB
 }
 
+///	@function	BombModifiers(_owner_id, _range)
+///	@param	{Real}	_owner_id	Game ID of the character who owns these modifiers
+///	@param	{Real}	_range	Defaults to 2, ranege of bomb explosion
+///	@desc	Struct storing all modifiers for a character's bombs
+function BombModifiers(_owner_id, _range = 2) constructor
+{
+	owner = _owner_id;
+	bomb_range = _range;
+}
+
+
+
 ///	@function	SpawnItem(_x, _y, _snap_to_grid, _type, _owner, _modifiers)
 ///	@param	{Real}	_x
 ///	@param	{Real}	_y
@@ -19,20 +31,21 @@ function SpawnItem(_x, _y, _snap_to_grid, _type, _owner, _modifiers)
 	
 	switch (_type) {
 	    case ITEM.BOMB:
-	        return SpawnBomb(_spawn_x, _spawn_y);
+	        return SpawnBomb(_spawn_x, _spawn_y, _modifiers);
 			
 	    default:
 	        return noone;
 	}
 }
 
-///	@function	SpawnBomb(_x, _y)
+///	@function	SpawnBomb(_x, _y, _bomb_modifiers)
 ///	@param	{Real}	_x
 ///	@param	{Real}	_y
+///	@param	{Struct.BombModifiers}	_bomb_modifiers
 ///	@desc	Spawns a bomb
-function SpawnBomb(_x, _y)
+function SpawnBomb(_x, _y, _bomb_modifiers)
 {
-	return instance_create_layer(_x, _y, "Actors", obj_bomb);
+	return instance_create_layer(_x, _y, "Actors", obj_bomb, {modifiers: _bomb_modifiers});
 }
 
 ///	@function	GenerateBombExplosion(_x, _y, _size)

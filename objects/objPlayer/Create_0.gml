@@ -3,6 +3,21 @@ event_inherited();
 can_bomb = true;
 my_id = 0;
 
+bomb_modifiers = new BombModifiers(my_id);
+
+///	@function	PlayerDeath()
+///	@desc	Called when a player dies
+function PlayerDeath()
+{
+	obj_game_controller.PlayerDied(my_id);
+	
+	instance_create_layer(SnapToGrid(x, SNAP_TO.CENTER), SnapToGrid(y, SNAP_TO.CENTER), "Actors", obj_breakable_destruction, {sprite_index: spr_player_death, life_time: -0.05});
+	instance_destroy(self);
+}
+
+TriggerActorDeath = PlayerDeath;
+
+
 function GetPlayerInput()
 {
 	var _direction = BinaryInputToVector(InputCheck(INPUT_VERB.UP), InputCheck(INPUT_VERB.DOWN), InputCheck(INPUT_VERB.LEFT), InputCheck(INPUT_VERB.RIGHT));
@@ -28,7 +43,7 @@ function ActorState()
 		var _ts = time_source_create(time_source_game, .5, time_source_units_seconds, function(){can_bomb = true;});
 		time_source_start(_ts);
 		
-		SpawnItem(x, y, SNAP_TO.CENTER, ITEM.BOMB, my_id, []);
+		SpawnItem(x, y, SNAP_TO.CENTER, ITEM.BOMB, my_id, bomb_modifiers);
 	}
 }
 
