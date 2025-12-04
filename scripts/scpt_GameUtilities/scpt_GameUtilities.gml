@@ -1,3 +1,11 @@
+enum SNAP_TO
+{
+	NOTHING,
+	TOP_LEFT,
+	CENTER,
+	BOTTOM_RIGHT
+}
+
 ///	@function	DrawSpriteFromTileSet(_tile_set_sprite, _tile_size, _row, _col, _pos_x, _pos_y, [_scale_x], [_scale_y], [_color], [_alpha])
 ///	@param	{Asset.GMSprite}	_tile_set_sprite
 ///	@param	{Real}	_tile_size
@@ -16,13 +24,27 @@ function DrawSpriteFromTileSet(_tile_set_sprite, _tile_size, _row, _col, _pos_x,
 }
 
 
-///	@function	SnapToGrid(_position, [_grid_size])
+///	@function	SnapToGrid(_position, _snap_to, [_grid_size])
 ///	@param	{Real}	_position
+///	@param	{Real}	_snap_to	Enum.SNAP_TO, Snaps the position to the specified verb
 ///	@param	{Real}	[_grid_size]
 ///	@desc	Takes the position, and returns the closest positions aligned with the grid size
-function SnapToGrid(_position, _grid_size = global.TILE_SIZE)
+function SnapToGrid(_position, _snap_to, _grid_size = global.TILE_SIZE)
 {
-	return GetGridPosition(_position, _grid_size) * _grid_size;
+	var _grid_position = GetGridPosition(_position, _grid_size) * _grid_size;
+	switch (_snap_to) {
+	    case SNAP_TO.NOTHING:
+	        return _position;
+		case SNAP_TO.TOP_LEFT:
+	        return _grid_position;
+		case SNAP_TO.CENTER:
+	        return _grid_position + _grid_size / 2;
+		case SNAP_TO.BOTTOM_RIGHT:
+	        return _grid_position + _grid_size;
+	    default:
+	        show_debug_message("WARNING: Specified SNAP_TO verb not defined for function \"SnapToGrid\"");
+		    return 0;
+	}
 }
 
 ///	@function	GetGridPosition(_position)

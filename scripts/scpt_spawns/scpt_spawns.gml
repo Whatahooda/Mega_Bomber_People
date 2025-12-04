@@ -3,13 +3,6 @@ enum ITEM
 	BOMB
 }
 
-enum SNAP_TO
-{
-	NOTHING,
-	TOP_LEFT,
-	CENTER
-}
-
 ///	@function	SpawnItem(_x, _y, _snap_to_grid, _type, _owner, _modifiers)
 ///	@param	{Real}	_x
 ///	@param	{Real}	_y
@@ -21,23 +14,8 @@ enum SNAP_TO
 ///	@return	{Id.Instance}
 function SpawnItem(_x, _y, _snap_to_grid, _type, _owner, _modifiers)
 {
-	var _spawn_x = _x;
-	var _spawn_y = _y;
-	if (_snap_to_grid > SNAP_TO.NOTHING)
-	{
-		_spawn_x = SnapToGrid(_x);
-		_spawn_y = SnapToGrid(_y);
-		
-		switch (_snap_to_grid) {
-		    case SNAP_TO.CENTER:
-		        _spawn_x += global.TILE_SIZE / 2;
-		        _spawn_y += global.TILE_SIZE / 2;
-		        break;
-		    default:
-		        show_debug_message("WARNING: Specified SNAP_TO verb not defined for function \"SpawnItem\"");
-		        break;
-		}
-	}
+	var _spawn_x = SnapToGrid(_x, _snap_to_grid);
+	var _spawn_y = SnapToGrid(_y, _snap_to_grid);
 	
 	switch (_type) {
 	    case ITEM.BOMB:
@@ -81,6 +59,7 @@ function GenerateBombExplosion(_x, _y, _size)
 			// If we previously encountered a breakable, create no more explosions in that direction
 			if (_direction_blocked[_dir]) continue;
 			
+			// TODO Trigger other bombs, don't create an explosion when one already exists on that tile
 			var _explosion_x = _x + i * dcos(90 * _dir) * global.TILE_SIZE;
 			var _explosion_y = _y + i * -dsin(90 * _dir) * global.TILE_SIZE;
 			var _breakable_collision = instance_place(_explosion_x, _explosion_y, obj_breakable);
@@ -102,6 +81,7 @@ function GenerateBombExplosion(_x, _y, _size)
 	}
 }
 
+
 ///	@function	SpawnExplosionTile(_x, _y, _sprite, _rotation)
 ///	@param	{Real}	_x
 ///	@param	{Real}	_y
@@ -113,4 +93,4 @@ function SpawnExplosionTile(_x, _y, _sprite, _rotation)
 	var _life_time = 0;
 	if (sprite_exists(_sprite)) _life_time = sprite_get_number(_sprite) / sprite_get_speed(_sprite);
 	instance_create_layer(_x, _y, "Dangers", obj_damage_box, {sprite_index: _sprite, image_angle: _rotation, life_time: _life_time});
-}
+}
