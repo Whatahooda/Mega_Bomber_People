@@ -8,7 +8,7 @@ enum DANGER
 	ACTOR_CONTACT
 }
 
-hurt_box = instance_create_layer(x, y, "Camera", obj_actor_hurtbox, {owner: self.id});
+hurt_box = instance_create_layer(x, y, "Actors", obj_actor_hurtbox, {owner: self.id});
 
 ///	@function	ActorHurtDefault(_danger_type)
 ///	@param	{Real}	_danger_type Enum.DANGER
@@ -17,6 +17,7 @@ function ActorHurtDefault(_danger_type)
 {
 	if (_danger_type != DANGER.NOTHING) TriggerActorDeath();
 }
+
 
 ActorHurt = ActorHurtDefault;
 
@@ -42,5 +43,6 @@ function MoveActor(_direction)
 	hurt_box.x = x;
 	hurt_box.y = y;
 }
+
 
 UpdateEntityMove = MoveActor;
