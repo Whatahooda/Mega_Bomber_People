@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scptWhataGuiUtil",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scptWhataGuiUtil",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/WhataGui/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

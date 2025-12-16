@@ -1,0 +1,1 @@
+// Text boxes should not be grabbed
