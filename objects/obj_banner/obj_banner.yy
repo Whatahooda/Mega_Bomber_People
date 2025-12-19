@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_game_controller",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_banner",
+  "eventList":[],
   "managed":true,
-  "name":"obj_game_controller",
+  "name":"obj_banner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers",
-    "path":"folders/Objects/Controllers.yy",
+    "name":"UI",
+    "path":"folders/Objects/UI.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"objWhataGUIBox",
+    "path":"objects/objWhataGUIBox/objWhataGUIBox.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_banner",
+    "path":"sprites/spr_banner/spr_banner.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

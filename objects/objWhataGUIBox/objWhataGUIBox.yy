@@ -36,6 +36,8 @@
     {"$GMObjectProperty":"v2","%Name":"width","filters":[],"listItems":[],"multiselect":false,"name":"width","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"96","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"height","filters":[],"listItems":[],"multiselect":false,"name":"height","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"96","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"can_be_dragged","filters":[],"listItems":[],"multiselect":false,"name":"can_be_dragged","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"current_string","filters":[],"listItems":[],"multiselect":false,"name":"current_string","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"font","filters":[],"listItems":[],"multiselect":false,"name":"font","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"fnt_grape_soda","path":"fonts/fnt_grape_soda/fnt_grape_soda.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"fnt_grape_soda","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

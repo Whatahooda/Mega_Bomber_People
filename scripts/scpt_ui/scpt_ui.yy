@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sfmt",
+  "%Name":"scpt_ui",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sfmt",
+  "name":"scpt_ui",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

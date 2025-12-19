@@ -3,7 +3,6 @@ event_inherited();
 button_held = false;
 is_highlighted = false;
 default_sprite = sprite_index;
-current_string = "Button";
 
 ///	@function	SetHighlight(_is_highlighted)
 ///	@param	{Bool}	_is_highlighted

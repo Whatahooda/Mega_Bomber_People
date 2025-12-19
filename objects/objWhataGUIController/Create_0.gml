@@ -140,12 +140,15 @@ function UIGroupNavigate(_direction)
 					button_currently_selected.connection_up,
 					button_currently_selected.connection_left,
 					button_currently_selected.connection_down];
-		// Un select previous button
-		button_currently_selected.SetHighlight(false);
+		if (instance_exists( _options[_direction]))
+		{
+			// Un select previous button
+			button_currently_selected.SetHighlight(false);
 		
-		// Pick new button
-		// The Enum input represents the indexes here
-		button_currently_selected = _options[_direction];
+			// Pick new button
+			// The Enum input represents the indexes here
+			button_currently_selected = _options[_direction];
+		}
 	}
 	
 	// Highlight the button
@@ -158,6 +161,7 @@ function UIGroupHoldButton()
 {
 	button_currently_selected.ButtonLeftPressed();
 }
+
 
 ///	@function	UIGroupSelect()
 ///	@param	{Bool}	_is_held	If true will immediately activate the button, if false does the HELD DOWN highlight
@@ -172,3 +176,4 @@ function UIGroupActivate(_activate_button)
 		button_currently_selected.ButtonLeftReleased(_activate_button);
 	}
 }
+

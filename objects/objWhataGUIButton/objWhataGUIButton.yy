@@ -7,11 +7,12 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":56,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"objWhataGUIButton",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"objWhataGUIBox","path":"objects/objWhataGUIBox/objWhataGUIBox.yy",},"propertyId":{"name":"current_string","path":"objects/objWhataGUIBox/objWhataGUIBox.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Button",},
+  ],
   "parent":{
     "name":"Objects",
     "path":"folders/WhataGui/Objects.yy",
@@ -38,7 +39,7 @@
     {"$GMObjectProperty":"v2","%Name":"connection_right","filters":[],"listItems":[],"multiselect":false,"name":"connection_right","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"connection_up","filters":[],"listItems":[],"multiselect":false,"name":"connection_up","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"connection_down","filters":[],"listItems":[],"multiselect":false,"name":"connection_down","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
-    {"$GMObjectProperty":"v2","%Name":"ui_group","filters":[],"listItems":[],"multiselect":false,"name":"ui_group","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"ui_group","filters":[],"listItems":[],"multiselect":false,"name":"ui_group","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"on_hover_sprite","filters":[],"listItems":[],"multiselect":false,"name":"on_hover_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"on_hover_custom","filters":[],"listItems":[],"multiselect":false,"name":"on_hover_custom","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"highlighted_sprite","filters":[],"listItems":[],"multiselect":false,"name":"highlighted_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sprWhataGUIButtonHighlighted","path":"sprites/sprWhataGUIButtonHighlighted/sprWhataGUIButtonHighlighted.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sprWhataGUIButtonHighlighted","varType":5,},

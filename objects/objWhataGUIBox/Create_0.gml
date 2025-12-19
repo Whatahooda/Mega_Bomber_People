@@ -7,9 +7,8 @@ drag_rx = 0;
 drag_ry = 0;
 
 // Text Variables
-current_string = "";
-text_font = fntArialDefault;
-font_halign = fa_left;
+text_font = font;
+font_halign = fa_center;
 font_valign = fa_middle;
 text_color = c_white;
 text_paddingx = 0;
@@ -79,7 +78,7 @@ function AutoTextPosition()
 		    text_paddingx = TEXT_BASE_PADDING;
 		    break;
 		case fa_center:
-		    text_paddingx = width / 2;
+		    text_paddingx = (bbox_right - bbox_left) / 2;
 		    break;
 		case fa_right:
 		    text_paddingx = bbox_right - TEXT_BASE_PADDING;
@@ -97,7 +96,7 @@ function AutoTextPosition()
 		    text_paddingy = TEXT_BASE_PADDING;
 		    break;
 		case fa_middle:
-		    text_paddingy = height / 2;
+		    text_paddingy = (bbox_bottom - bbox_top) / 2;
 		    break;
 		case fa_bottom:
 		    text_paddingy = bbox_bottom - TEXT_BASE_PADDING;
@@ -144,5 +143,5 @@ function CreateChildElement(_rx, _ry, _whatagui_element_obj, _pos_relative_scale
 	return _child;
 }
 
-ChangeVisuals(width, height, false, false);
-ChangeTextFormat(text_font, fa_left, fa_middle, c_white);
+//ChangeVisuals(width, height, false, false);
+ChangeTextFormat(text_font, fa_center, fa_middle, c_white);

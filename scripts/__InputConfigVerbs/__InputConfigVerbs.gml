@@ -12,6 +12,7 @@ function __InputConfigVerbs()
         ACTION,
         SPECIAL,
         PAUSE,
+		COUNT,
     }
     
     enum INPUT_CLUSTER
