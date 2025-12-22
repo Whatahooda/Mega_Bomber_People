@@ -15,7 +15,9 @@ loaded_default_button = noone;
 ui_button_groups = ds_map_create();
 ui_button_groups_default = ds_map_create();
 
-button_currently_selected = noone;
+//button_currently_selected = noone;
+buttons_currently_selected = array_create(INPUT_MAX_PLAYERS, noone);
+player_in_control = 0;
 
 
 ///	@function	UIButtonNode(_button_instance, _ui_group)
@@ -125,34 +127,34 @@ function UIGroupLoad(_ui_group)
 	show_debug_message("Loaded UI group " + string(_ui_group) + " with " + string(array_length(_button_group)) + " buttons");
 }
 
-///	@function	DefaultFunction(_param)
-///	@param	{Type}	_param
+///	@function	UIGroupNavigate(_direction, _player)
+///	@param	{Real}	_direction
+///	@param	{Real}	_player
 ///	@desc	Description
-function UIGroupNavigate(_direction)
-{
-	show_debug_message("Navigating with " + string(_direction) + ", aka " + ["right", "up", "left", "down"][_direction]);
-	
-	
-	if (!instance_exists(button_currently_selected)) button_currently_selected = loaded_default_button;
+function UIGroupNavigate(_direction, _player)
+{	
+	var _player_button = buttons_currently_selected[_player];
+	if (!instance_exists(_player_button)) array_set(buttons_currently_selected, _player, loaded_default_button);
 	else
 	{
-		var _options = [button_currently_selected.connection_right,
-					button_currently_selected.connection_up,
-					button_currently_selected.connection_left,
-					button_currently_selected.connection_down];
+		var _options = [_player_button.connection_right,
+					_player_button.connection_up,
+					_player_button.connection_left,
+					_player_button.connection_down];
 		if (instance_exists( _options[_direction]))
 		{
 			// Un select previous button
-			button_currently_selected.SetHighlight(false);
+			_player_button.SetHighlight(false);
 		
 			// Pick new button
 			// The Enum input represents the indexes here
-			button_currently_selected = _options[_direction];
+			//button_currently_selected = _options[_direction];
+			array_set(buttons_currently_selected, _player, _options[_direction]);
 		}
 	}
 	
 	// Highlight the button
-	button_currently_selected.SetHighlight(true);
+	buttons_currently_selected[_player].SetHighlight(true);
 }
 
 ///	@function	UIGroupHoldButton()
@@ -165,15 +167,24 @@ function UIGroupHoldButton()
 
 ///	@function	UIGroupSelect()
 ///	@param	{Bool}	_is_held	If true will immediately activate the button, if false does the HELD DOWN highlight
+///	@param	{Real}	_player	Specifies which player is activating a button
 ///	@desc	Attempts to "click" the currently selected button
-function UIGroupActivate(_activate_button)
+function UIGroupActivate(_activate_button, _player = -1)
 {
 	// If the current button isn't visibly selected, then re highlight it
-	if (!button_currently_selected.is_highlighted) button_currently_selected.SetHighlight(true);
+	if (!instance_exists(buttons_currently_selected[_player]))
+	{
+		array_set(buttons_currently_selected, _player, loaded_default_button);
+		return;
+	}
+	var _player_button = buttons_currently_selected[_player];
+
+	if (!_player_button.is_highlighted) _player_button.SetHighlight(true);
 	else
 	{
-		button_currently_selected.button_held = true;
-		button_currently_selected.ButtonLeftReleased(_activate_button);
+		if (_player == -1 || _player == _player_button.player_specific) _activate_button = false;
+		_player_button.button_held = true;
+		_player_button.ButtonLeftReleased(_activate_button);
 	}
 }
 

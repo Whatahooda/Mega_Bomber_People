@@ -1,38 +1,22 @@
 if (global.menu_current != UI_MENU.HIDE)
 {
-	for (var _input = 0; _input < INPUT_VERB.COUNT; _input++)
+	for (var _player = 0; _player < INPUT_MAX_PLAYERS; _player++)
 	{
-		if (InputCheck(_input))
+		for (var _input = 0; _input < INPUT_VERB.COUNT; _input++)
 		{
-			if (!input_pressed[_input]) input_functions[_input]();
-			input_pressed[_input] = true;
+			if (InputPressed(_input, _player))
+			{
+				show_debug_message("Player " + string(_player) + " input");
+				input_functions[_input](_player);
+			}
 		}
-		else input_pressed[_input] = false;
+		/*
+		if (InputPartyGetJoin())
+		{
+			if (InputPlayerConnectedCount() == _player - 1)
+		}
+		*/
 	}
-	/*
-	if (InputCheck(INPUT_VERB.RIGHT))
-	{
-		if (!pressed_right) objWhataGUIController.UIGroupNavigate(0);
-		pressed_right = true;
-	}
-	else pressed_right = false;
-	if (InputCheck(INPUT_VERB.UP))
-	{
-		if (!pressed_up) objWhataGUIController.UIGroupNavigate(1);
-		pressed_up = true;
-	}
-	else pressed_up = false;
-	if (InputCheck(INPUT_VERB.LEFT))
-	{
-		if (!pressed_left) objWhataGUIController.UIGroupNavigate(2);
-		pressed_left = true;
-	}
-	else pressed_left = false;
-	if (InputCheck(INPUT_VERB.DOWN))
-	{
-		if (!pressed_down) objWhataGUIController.UIGroupNavigate(3);
-		pressed_down = true;
-	}
-	else pressed_down = false;
-	*/
+	
+	
 }
