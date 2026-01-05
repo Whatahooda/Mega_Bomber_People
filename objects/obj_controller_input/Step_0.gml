@@ -10,13 +10,11 @@ if (global.menu_current != UI_MENU.HIDE)
 				input_functions[_input](_player);
 			}
 		}
-		/*
-		if (InputPartyGetJoin())
-		{
-			if (InputPlayerConnectedCount() == _player - 1)
-		}
-		*/
 	}
-	
-	
+}
+
+// Connect devices to players
+if (is_connecting_players)
+{
+	CheckForPlayersConnecting();
 }

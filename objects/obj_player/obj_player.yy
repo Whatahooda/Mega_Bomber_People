@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"objPlayer",
+  "%Name":"obj_player",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objPlayer",
+  "name":"obj_player",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},"propertyId":{"name":"sprite_ts","path":"objects/obj_actor/obj_actor.yy",},"resource":{"name":"spr_KenneyDungeon","path":"sprites/spr_KenneyDungeon/spr_KenneyDungeon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_KenneyDungeon",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},"propertyId":{"name":"sprite_row","path":"objects/obj_actor/obj_actor.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_KDCPlayer1",
-    "path":"sprites/spr_KDCPlayer1/spr_KDCPlayer1.yy",
+    "name":"spr_KDCPlayer01",
+    "path":"sprites/spr_KDCPlayer01/spr_KDCPlayer01.yy",
   },
   "spriteMaskId":null,
   "visible":true,

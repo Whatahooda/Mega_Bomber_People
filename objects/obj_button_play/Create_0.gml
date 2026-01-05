@@ -4,5 +4,5 @@ event_inherited();
 ButtonOnClick = function()
 {
 	UIChangeMenu(UI_MENU.PLAYERSETUP);
-	InputPartySetJoin(true);
+	obj_controller_input.SetConnectingPlayers(true);
 }

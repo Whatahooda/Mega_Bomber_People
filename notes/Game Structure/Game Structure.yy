@@ -3,8 +3,8 @@
   "%Name":"Game Structure",
   "name":"Game Structure",
   "parent":{
-    "name":"Mega BomberPeople",
-    "path":"Mega BomberPeople.yyp",
+    "name":"Notes",
+    "path":"folders/Notes.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",
