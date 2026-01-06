@@ -1,0 +1,1 @@
+objWhataGUIController.NewButtonCreated(self.id);

@@ -1,7 +1,6 @@
 event_inherited();
 
 can_bomb = true;
-my_id = 0;
 
 bomb_modifiers = new BombModifiers(my_id);
 
@@ -20,7 +19,7 @@ TriggerActorDeath = PlayerDeath;
 
 function GetPlayerInput()
 {
-	var _direction = BinaryInputToVector(InputCheck(INPUT_VERB.UP), InputCheck(INPUT_VERB.DOWN), InputCheck(INPUT_VERB.LEFT), InputCheck(INPUT_VERB.RIGHT));
+	var _direction = BinaryInputToVector(InputCheck(INPUT_VERB.UP, my_id), InputCheck(INPUT_VERB.DOWN, my_id), InputCheck(INPUT_VERB.LEFT, my_id), InputCheck(INPUT_VERB.RIGHT, my_id));
 	return _direction;
 }
 
@@ -34,7 +33,7 @@ function ActorState()
 		MoveActor(_move_direction);
 	}
 	
-	if (can_bomb && InputCheck(INPUT_VERB.ACCEPT) && place_empty(SnapToGrid(x), SnapToGrid(y), obj_bomb))
+	if (can_bomb && InputCheck(INPUT_VERB.ACCEPT, my_id) && place_empty(SnapToGrid(x), SnapToGrid(y), obj_bomb))
 	{
 		can_bomb = false;
 		var _ts = time_source_create(time_source_game, .5, time_source_units_seconds, function(){can_bomb = true;});
