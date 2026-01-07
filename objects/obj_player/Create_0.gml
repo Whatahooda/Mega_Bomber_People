@@ -3,6 +3,8 @@ event_inherited();
 can_bomb = true;
 
 bomb_modifiers = new BombModifiers(my_id);
+player_profile = obj_controller_players.player_profiles[my_id];
+sprite_index = GetPlayerSpriteIdle(player_profile.player_sprite_number);
 
 ///	@function	PlayerDeath()
 ///	@desc	Called when a player dies

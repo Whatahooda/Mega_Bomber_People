@@ -16,10 +16,10 @@ PLAYER_SPRITES_COUNT = array_length(PLAYER_SPRITES_IDLE);
 
 // Player information:
 // device
-players = array_create(0);
+player_profiles = array_create(0);
 for (var i = 0; i < INPUT_MAX_PLAYERS; i++)
 {
-	array_push(players, new PlayerProfile(0));
+	array_push(player_profiles, new PlayerProfile(0));
 }
 
 ///	@function	PlayerProfile(_sprite)
@@ -28,4 +28,4 @@ for (var i = 0; i < INPUT_MAX_PLAYERS; i++)
 function PlayerProfile(_sprite_number) constructor
 {
 	player_sprite_number = _sprite_number
-}
+}

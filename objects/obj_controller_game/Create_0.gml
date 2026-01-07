@@ -70,10 +70,6 @@ function LoadLevel(_room, _tileset, _x = 0, _y = 0)
 ///	@desc	Description
 function UpdateGlobalLayers(_level_payload)
 {
-	var _all_layers = _level_payload.GetLayers();
-	for (var i = 0; i < array_length(_all_layers); i++) {
-	    show_debug_message(layer_get_name(_all_layers[i]));
-	}
 	if (is_undefined(_level_payload))
 	{
 		global.layer_actors = "Actors";

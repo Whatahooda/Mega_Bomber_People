@@ -24,17 +24,18 @@ current_count = spawn_count;
 ///	@function	SpawnCreateInstance()
 ///	@return	{ID.Instance}
 ///	@desc	Overridable function in case of need for setting instance variables
-function SpawnCreateInstance()
+SpawnCreateInstance = function()
 {
 	return instance_create_layer(x, y, layer, spawn_object);
 }
+
 
 ///	@function	SpawnFunction()
 ///	@desc	Callback for the Spawn Time Source
 function SpawnFunction()
 {
 	if (destroy_old_spawns && instance_exists(last_instance)) instance_destroy(last_instance);
-	last_instance = SpawnCreateInstance()
+	last_instance = SpawnCreateInstance();
 	current_count--;
 	
 	if (current_count > 0)
