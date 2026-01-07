@@ -45,3 +45,4 @@ function ButtonLeftReleased(_activate_button)
 ButtonOnClick = function() {show_debug_message("Button has been clicked.")};
 
 ChangeTextFormat(text_font, fa_center, fa_middle, text_color);
+objWhataGUIController.NewButtonCreated(self.id);

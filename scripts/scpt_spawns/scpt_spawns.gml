@@ -46,7 +46,7 @@ function SpawnItem(_x, _y, _snap_to_grid, _type, _owner, _modifiers)
 ///	@desc	Spawns a bomb
 function SpawnBomb(_x, _y, _bomb_modifiers)
 {
-	return instance_create_layer(_x, _y, "Actors", obj_bomb, {modifiers: _bomb_modifiers});
+	return instance_create_layer(_x, _y, global.layer_actors, obj_bomb, {modifiers: _bomb_modifiers});
 }
 
 ///	@function	GenerateBombExplosion(_x, _y, _size)
@@ -106,5 +106,5 @@ function SpawnExplosionTile(_x, _y, _sprite, _rotation)
 {
 	var _life_time = 0;
 	if (sprite_exists(_sprite)) _life_time = sprite_get_number(_sprite) / sprite_get_speed(_sprite);
-	instance_create_layer(_x, _y, "Dangers", obj_damage_box, {sprite_index: _sprite, image_angle: _rotation, life_time: _life_time, danger_type: DANGER.EXPLOSION});
+	instance_create_layer(_x, _y, global.layer_danger, obj_damage_box, {sprite_index: _sprite, image_angle: _rotation, life_time: _life_time, danger_type: DANGER.EXPLOSION});
 }

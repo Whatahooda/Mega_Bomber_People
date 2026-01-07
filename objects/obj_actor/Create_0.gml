@@ -8,7 +8,7 @@ enum DANGER
 	ACTOR_CONTACT
 }
 
-hurt_box = instance_create_layer(x, y, "Actors", obj_actor_hurtbox, {owner: self.id});
+hurt_box = instance_create_layer(x, y, global.layer_actors, obj_actor_hurtbox, {owner: self.id});
 
 ///	@function	ActorHurtDefault(_danger_type)
 ///	@param	{Real}	_danger_type Enum.DANGER
@@ -25,7 +25,7 @@ ActorHurt = ActorHurtDefault;
 ///	@desc	Default death for actors
 function ActorDeath()
 {
-	instance_create_layer(x, y, "Breakables", obj_breakable_destruction);
+	instance_create_layer(x, y, global.layer_breakables, obj_breakable_destruction);
 	instance_destroy(self);
 }
 

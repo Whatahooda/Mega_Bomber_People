@@ -134,7 +134,11 @@ function UIGroupLoad(_ui_group)
 function UIGroupNavigate(_direction, _player)
 {	
 	var _player_button = buttons_currently_selected[_player];
-	if (!instance_exists(_player_button)) array_set(buttons_currently_selected, _player, loaded_default_button);
+	if (!instance_exists(_player_button))
+	{
+		array_set(buttons_currently_selected, _player, loaded_default_button);
+		_player_button = buttons_currently_selected[_player];
+	}
 	else
 	{
 		var _options = [_player_button.connection_right,

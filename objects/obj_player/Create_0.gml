@@ -10,7 +10,7 @@ function PlayerDeath()
 {
 	obj_controller_game.PlayerDied(my_id);
 	
-	instance_create_layer(x, y, "Actors", obj_breakable_destruction, {sprite_index: spr_player_death, life_time: -0.05});
+	instance_create_layer(x, y, layer, obj_breakable_destruction, {sprite_index: spr_player_death, life_time: -0.05});
 	instance_destroy(self);
 }
 
